@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+    .photo-header {
+        background-image: url('/static/images/ganado.jpg');
+        height: 28vh;
+        background-size: cover;
+        background-position-y: 58%;
+    }
+</style>
+{% endblock css %}
+
+{% block content %}
+<div class="col">
+    <div class="row">
+        <div class="card photo-header mb-3">
+            <div class="card-body pt-xxl-8 pt-5">
+                <h1 class="text-white">LoCattle</h1>
+                <h5 class="text-white ps-2">By: Yiseth Kamell, José Santiago, Robert Martínez</h5>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card py-4">
+            <div class="card-header px-5">
+                <h1>Acerca del Proyecto</h1>
+                <hr>
+            </div>
+            <div class="card-body px-5 pt-0">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

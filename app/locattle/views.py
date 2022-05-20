@@ -51,3 +51,7 @@ class LocationAPIView(GenericAPIView):
         last_location = CattleLocation.objects.order_by("-timestamp").first()
         data = LocationSerializer(last_location).data 
         return Response(data)
+
+
+class AboutUsView(TemplateView):
+    template_name = "about_us.html"
