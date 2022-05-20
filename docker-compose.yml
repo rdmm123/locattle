@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  locattle:
+    build:
+      context: ./app
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
+    expose:
+      - 8000
+    volumes:
+      - static_volume:./code/app/static_root
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - web
