@@ -10,7 +10,7 @@
 !*/**/migrations/__init__.py
 **/**/**/migrations/**
 !*/**/**/migrations/__init__.py
-static_root/*
+staticfiles/*
 media_root/*
 __pycache__/*
 *.trc
