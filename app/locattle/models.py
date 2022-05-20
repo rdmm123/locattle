@@ -7,6 +7,7 @@ class CattleLocation(models.Model):
     cow = models.IntegerField()
     lat = models.FloatField()
     lng = models.FloatField()
+    timestamp = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return f"Vaca: {self.cow} | Finca: {self.farm} | Departamento: {self.depto}"

@@ -42,6 +42,9 @@ INSTALLED_APPS = [
 
     # local
     'locattle',
+
+    # 3rd party
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
