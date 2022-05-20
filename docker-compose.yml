@@ -5,7 +5,7 @@ services:
     build:
       context: ./app
       args:
-        UID: $(id -u)
+        - UID
     environment:
       - LANG=es_CO.UTF-8
       - DJANGO_ENV=$ENV
@@ -13,8 +13,7 @@ services:
     expose:
       - 8000
     volumes:
-      ./app:/code
-      - static_volume:/code/staticfiles
+      - ./app:/code
   nginx:
     build: ./nginx
     ports:
@@ -22,6 +21,4 @@ services:
     depends_on:
       - locattle
     volumes:
-      - static_volume:/code/staticfiles
-volumes:
-    static_volume:
+      - ./app/staticfiles:/static
