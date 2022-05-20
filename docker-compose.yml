@@ -4,14 +4,20 @@ services:
   locattle:
     build:
       context: ./app
+      args:
+        ENV: $ENV
     command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
     expose:
       - 8000
     volumes:
-      - static_volume:./code/app/static_root
+      - static_volume:/code/staticfiles
   nginx:
     build: ./nginx
     ports:
       - 80:80
     depends_on:
-      - web
+      - locattle
+    volumes:
+      - static_volume:/code/staticfiles
+volumes:
+    static_volume:
