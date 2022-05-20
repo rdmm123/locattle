@@ -2,7 +2,7 @@ import json
 from secrets import compare_digest
 
 from django.conf import settings
-from django.http import HttpResponseForbidden
+from django.http import HttpResponseForbidden, HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
@@ -20,6 +20,7 @@ def webhook(request):
         )
 
     payload = json.loads(request.body)
+    print(payload)
 
     data = payload["uplink_message"]["decoded_payload"]
 
@@ -31,4 +32,4 @@ def webhook(request):
         lng=data["lng"],
     )
 
-    return render("ACK", content_type="text/plain")
+    return HttpResponse("ACK", content_type="text/plain")

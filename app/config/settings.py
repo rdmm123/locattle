@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 DJANGO_ENV = os.getenv('DJANGO_ENV')
-print(DJANGO_ENV)
+
 # Application definition
 
 INSTALLED_APPS = [
