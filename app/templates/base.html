@@ -34,12 +34,17 @@
       integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
       crossorigin=""
     />
+    <link rel="icon" type="image/x-icon" href="{% static '/images/favicon.png' %}">
     <style>
       .full-height {
         height: 100vh;
       }
       .content-row {
         height: 96.5vh;
+      }
+      .integrantes {
+        color: rgb(155, 155, 155);
+        font-size: 1.3vh;
       }
     </style>
     {% block css %}{% endblock css %}
@@ -59,7 +64,7 @@
         ></i>
         <a class="navbar-brand m-0" href="{% url 'locattle' %}">
           <!-- <img src="../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo"> -->
-          <span class="font-weight-bold"><h4>LoCattle</h4></span>
+          <img src="{% static 'images/logo_text_color.png' %}" alt="logo">
         </a>
       </div>
       <hr class="horizontal dark mt-0" />
@@ -172,8 +177,9 @@
           </li>
         </ul>
       </div>
-      <div class="sidenav-footer mx-3 pt-8">
-        <img class="pt-3" src="{% static 'images/logo_un.png' %}" alt="Universidad del Norte" width="220">
+      <div class="sidenav-footer mx-3 pt-8 d-flex flex-column align-items-center">
+        <img class="pt-2 pb-2" src="{% static 'images/logo_un.png' %}" alt="Universidad del Norte" width="180">
+        <p class="text-center integrantes">Yiseth Kamell, Robert Martínez, José Santiago</p>
       </div>
     </aside>
     <main

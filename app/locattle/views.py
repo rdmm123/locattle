@@ -30,6 +30,9 @@ def webhook(request):
 
     data = payload["uplink_message"]["decoded_payload"]
 
+    if data["lat"] == 0 and data["lng"] == 0:
+        return HttpResponse("Latitud y Longitud vacías.", content_type="text/plain")
+
     CattleLocation.objects.create(
         depto=data["depto"],
         farm=data["finca"],

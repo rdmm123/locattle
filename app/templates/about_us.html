@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block css %}
 <style>
@@ -12,23 +13,36 @@
 {% endblock css %}
 
 {% block content %}
-<div class="col">
+<div class="col pe-3">
     <div class="row">
         <div class="card photo-header mb-3">
-            <div class="card-body pt-xxl-8 pt-5">
-                <h1 class="text-white">LoCattle</h1>
-                <h5 class="text-white ps-2">By: Yiseth Kamell, José Santiago, Robert Martínez</h5>
+            <div class="card-body d-flex flex-column justify-content-end">
+                <img class="" src="{% static 'images/logo_white.png' %}" alt="logo_banner" width="200">
+                <h5 class="text-white">La mejor manera de monitorear a tu ganado</h5>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="card py-4">
+        <div class="card py-4 mb-3">
             <div class="card-header px-5">
                 <h1>Acerca del Proyecto</h1>
                 <hr>
             </div>
             <div class="card-body px-5 pt-0">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                <p>
+                    La ubicación y conteo del ganado en las fincas colombianas sigue siendo una tarea netamente humana,
+                    con altos costos de tiempo y dinero. En el país no se han reportado sistemas electrónicos y de
+                    comunicaciones para realizar esta labor, si bien sí existen varios en Australia, pero son 
+                    sistemas costosos. El conocimiento de la ubicación del ganado permite a los ganaderos saber
+                    el estado de los hatos, patrones de pastoreo, detección de anomalías y enfermedades, entre otros.
+                </p>
+                <p>
+                    Gran parte de las exigencias a este tipo de sistemas es el costo y la duración del sistema
+                    de alimentación. En este proyecto entonces se busca diseñar y montar un prototipo inicial,
+                    basado en tecnología electrónica de bajo consumo, de un dispositivo para enviar la posición
+                    de un GPS y algunos datos relacionados con cada semoviente a un Gateway LoRa remoto.
+                    Se busca optimizar empíricamente la utilización de la batería.
+                </p>
             </div>
         </div>
     </div>
