@@ -14,13 +14,14 @@ const fetchLastLocation = async () => {
 }
 
 const formatData = (data) => {
-    const timestampDate = Date(data.timestamp);
-    const formattedDate = timestampDate.toLocaleString('es-CO', {'timeStyle': 'short'});
+    console.log(data.timestamp);
+    const timestampDate = new Date(data.timestamp);
+    const formattedDate = timestampDate.toLocaleString('es-CO', {'dateStyle': 'short', 'timeStyle': 'short'});
     return `
         <ul>
             <li><b>Latitud:</b> ${data.lat}</li>
             <li><b>Longitud:</b> ${data.lng}</li>
-            <li><b>Timestamp:</b> ${timestampDate}</li>
+            <li><b>Timestamp:</b> ${formattedDate}</li>
             <li><b>Vaca:</b> ${data.cow}</li>
             <li><b>Finca:</b> ${data.farm}</li>
             <li><b>Departamento:</b> ${data.depto}</li>
